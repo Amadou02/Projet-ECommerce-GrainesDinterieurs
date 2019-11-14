@@ -16,7 +16,6 @@ html, body {
   left: 8%;
   font-family: Cinzel;
   font-size: 5.5em;
-
 }
 .moodCreator{
   font-size: 2.5em;
@@ -26,6 +25,7 @@ html, body {
   font-family: Cinzel;
   color: #dacb8d;
   font-weight: bold;
+  /* Possibilité de mettre "font-weight: bold" avec la classe Boostrap 4 "font-weight-bold" */
 }
 #footerAncre .logoFooterMobile {
   display : none;
@@ -37,3 +37,4 @@ html, body {
   #footerAncre .logoFooter {
     display : none;
   }
+}
