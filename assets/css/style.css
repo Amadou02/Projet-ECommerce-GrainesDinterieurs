@@ -10,6 +10,10 @@ html, body {
   width: 100%;
   /* opacity: 90%; */
 }
+.headerBlock div {
+  position: relative;
+  z-index: 1;
+}
 .shopName{
   position: absolute;
   top: 25%;
@@ -33,6 +37,9 @@ html, body {
 }
 .image9{
   height: 400px;
+}
+.card-columns .card {
+  min-width : 100%;
 }
 #footerAncre .logoFooterMobile {
   display : none;
