@@ -4,6 +4,8 @@ html, body {
   scroll-behavior: smooth;
   overflow: auto;
 }
+
+/* Header */
 .imgHeader {
   position: relative;
   height: 58em;
@@ -14,14 +16,14 @@ html, body {
   position: relative;
   z-index: 1;
 }
-.shopName{
+.shopName {
   position: absolute;
   top: 25%;
   left: 8%;
   font-family: Cinzel;
   font-size: 5.5em;
 }
-.moodCreator{
+.moodCreator {
   font-size: 2.5em;
   position: absolute;
   top: 65%;
@@ -31,16 +33,31 @@ html, body {
   font-weight: bold;
   /* Possibilité de mettre "font-weight: bold" avec la classe Boostrap 4 "font-weight-bold" */
 }
-#deco .row img{
+
+/* Modal */
+#boutonPanier, #boutonWishlist {
+  font-size: 150%;
+}
+#boutonPanier img, #boutonWishlist img {
+  filter: brightness(0) invert(1);
+}
+#boutonWishlist {
+  border-left: 2px solid lightgrey;
+}
+
+/* Deco */
+#deco .row img {
   /* Ne jamais mettre " img " seul comme selcteur car ça affecte toutes les images de la page */
   height: 200px;
 }
-.image9{
+.image9 {
   height: 400px;
 }
 .card-columns .card {
   min-width : 100%;
 }
+
+/* Footer */
 #footerAncre .logoFooterMobile {
   display : none;
 }

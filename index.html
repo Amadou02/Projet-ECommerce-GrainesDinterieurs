@@ -7,11 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css">
+
   <!-- Polices -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel&display=swap">
 </head>
 <body class="container-fluid">
   <header>
+    <!-- Titre -->
     <div class="headerBlock">
       <div>
         <h1 class="shopName text-white text-center">L'Atelier des Graines d'Intérieurs</h1>
@@ -20,7 +22,54 @@
       <img class="imgHeader" src="assets/img/Ambiances/imgHeader.png" alt="Image de fond">
     </div>
     <nav>
-
+      <div class="d-flex">
+        <button type="button" id="boutonPanier" class="btn btn-sm btn-dark btn-block w-50 py-1" data-toggle="modal" data-target="#modalPanier">
+          <img class="mr-4" width="50" src="https://image.flaticon.com/icons/svg/34/34627.svg" alt="Logo Panier">
+          Mon Panier
+        </button>
+        <button type="button" id="boutonWishlist" class="btn btn-sm btn-dark btn-block w-50 py-1 mt-0" data-toggle="modal" data-target="#modalWishlist">
+          <img class="mr-4" width="50" src="https://image.flaticon.com/icons/svg/868/868517.svg" alt="Logo Wishlist">
+          Ma Wishlist
+        </button>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="modalPanier" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Panier</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Wishlist -->
+      <div class="modal fade" id="modalWishlist" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Wishlist</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
     <!-- Début : Carrousel -->
     <div class="carousel slide z-depth-1-half mx-auto" data-ride="carousel">
