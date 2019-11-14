@@ -27,7 +27,7 @@ html, body {
   font-weight: bold;
   /* Possibilité de mettre "font-weight: bold" avec la classe Boostrap 4 "font-weight-bold" */
 }
-#img{
+#deco .row img{
   /* Ne jamais mettre " img " seul comme selcteur car ça affecte toutes les images de la page */
   height: 200px;
 }
