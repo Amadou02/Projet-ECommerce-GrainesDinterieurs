@@ -7,9 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css">
+  <!-- Polices -->
+  <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
 </head>
 <body class="container-fluid">
   <header>
+    <div class="headerBlock">
+      <img class="imgHeader" src="assets/img/Ambiances/imgHeader.png" alt="">
+      <h1 class="shopName text-white text-center">L'Atelier des Graines d'Intérieurs</h1>
+      <h2 class="moodCreator text-center">Créateur d'ambiances</h2>
+
+    </div>
+    <nav>
+
+    </nav>
     <!-- Début : Carrousel -->
     <div class="carousel slide z-depth-1-half mx-auto" data-ride="carousel">
       <div class="carousel-inner">
@@ -35,7 +46,7 @@
     <!-- Fin : Carrousel -->
   </header>
 
-  <!-- Début : Colomne de carte pour présentation d'articles -->
+  <!-- Début : Colonne de carte pour présentation d'articles -->
   <div class="card-columns row-fluid text-center">
 
     <div class="card col">
@@ -112,7 +123,69 @@
 
   </div>
   <!-- fin : inspi déco -->
-  <footer>
+  <footer id="footerAncre" class="bg-dark">
+    <!-- Partie contact -->
+    <div class="row-fluid p-0 m-0 text-center">
+      <h3 class="text-white">- Contact -</h3>
+      <div class="d-flex py-4">
+        <div class="text-left bg-white rounded-lg mx-3 w-80">
+          <p class="px-3 pt-2">Notre magasin : 31 rue paul bignon, 76260 Eu, Haute-Normandie, France</p>
+          <p class="px-3">Notre téléphone : 06.77.62.26.63</p>
+          <p class="px-3">Notre mail : sandie.pottier@grainesdinterieurs.fr</p>
+          <div class="d-flex justify-content-around mt-3 mx-auto w-50">
+            <img class="mb-3" width="80" src="https://image.flaticon.com/icons/svg/1051/1051262.svg" alt="Instagram logo">
+            <img class="mb-3" width="80" src="https://image.flaticon.com/icons/svg/1051/1051258.svg" alt="Facebook logo">
+          </div>
+        </div>
+        <div class="text-center logoFooter">
+          <img src="assets/img/Logo/logo.png" alt="logo" width="230" class="img-responsive">
+        </div>
+      </div>
+      <div class="text-center mx-auto logoFooterMobile mb-3">
+        <img src="assets/img/Logo/logo.png" alt="logo" width="230" class="img-responsive">
+      </div>
+    </div>
+
+    <!-- Modale des mentions légales -->
+    <div class="btn-toolbar justify-content-center pt-1">
+      <button type="button" class="btn btn-sm btn-light" data-toggle="modal" data-target="#modalFooter">Mentions Légales</button>
+    </div>
+    <div class="modal fade" id="modalFooter">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="modal-title font-weight-bold">Mentions Légales</span>
+            <button type="button" class="close font-weight-bold" data-dismiss="modal">×</button>
+          </div>
+          <div class="modal-body text-center">
+            <span class="font-weight-bold">Clause de non-responsabilité</span>
+            <hr>
+            <p>
+              Si vous avez besoin de plus amples renseignements ou si vous avez des questions au sujet de la clause de non-responsabilité de notre site, n'hésitez pas à me contacter par courriel à sandie.pottier@grainesdinterieurs.fr.
+            </p>
+            <hr>
+            <p>
+              Toutes les informations contenues sur ce site Web sont publiées de bonne foi et à titre d'information générale uniquement. " L'atelier Graines d'Intérieurs " ne donne aucune garantie quant à l'exhaustivité, la fiabilité et l'exactitude de ces informations. Toute action que vous entreprenez sur l'information que vous trouvez sur ce site Web, est strictement à vos propres risques. " L'atelier Graines d'Intérieurs " ne sera pas responsable des pertes et/ou dommages liés à l'utilisation de notre site web.
+              À partir de notre site E-commerce, vous pouvez visiter d'autres sites Web en suivant des hyperliens vers des sites externes. Bien que nous nous efforçons de ne fournir que des liens de qualité vers des sites Web utiles et éthiques, nous n'avons aucun contrôle sur le contenu et la nature de ces sites. Ces liens vers d'autres sites n'impliquent pas une recommandation pour l'ensemble du contenu de ces sites. Les propriétaires et le contenu du site peuvent changer sans préavis et peuvent survenir avant que nous ayons la possibilité de supprimer un lien qui a pu " mal tourner ".
+              Sachez également que lorsque vous quittez notre site Web, d'autres sites peuvent avoir des politiques de confidentialité et des conditions différentes qui sont indépendantes de notre volonté. Veuillez-vous assurer de vérifier les politiques de confidentialité de ces sites ainsi que leurs conditions d'utilisation avant de vous engager dans toute activité commerciale ou de télécharger toute information.
+            </p>
+            <span class="font-weight-bold">Consentement</span>
+            <hr>
+            <p>
+              En utilisant notre site Web, vous consentez par la présente à cette clause de non-responsabilité et en acceptez les conditions.
+            </p>
+            <span class="font-weight-bold">Mises à jour</span>
+            <hr>
+            <p>
+              Si nous mettons à jour, modifions ou apportons des changements à ce document, ces changements seront affichés bien en vue ici.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark m-auto" data-dismiss="modal">× Fermer</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
   <!-- Liens obligatoires Bootstrap/Script.js -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -120,5 +193,4 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
-
 </html>
