@@ -44,7 +44,29 @@ html, body {
 #boutonWishlist {
   border-left: 2px solid lightgrey;
 }
-
+.modal .table {
+  color : black !important;
+}
+.bg-lightgrey {
+  background-color: lightgrey;
+  font-size: 110%;
+}
+.bg-vertWishlist {
+  background-color : #3c5949;
+}
+.bg-rougePanier {
+  background-color : #ef6164;
+}
+/* Articles */
+#colonneArticle .card-title{
+  color: #6e865f;
+  font-weight: bold;
+}
+#colonneArticle .card-footer{
+  background-color: #6e865f;
+  color:white;
+  font-weight: bold;
+}
 /* Deco */
 #deco .row img {
   /* Ne jamais mettre " img " seul comme selcteur car ça affecte toutes les images de la page */
