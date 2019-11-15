@@ -55,7 +55,7 @@ html, body {
   font-weight: bold;
 }
 /* Deco */
-#deco .row img {
+#deco .decoration img {
   /* Ne jamais mettre " img " seul comme selcteur car ça affecte toutes les images de la page */
   height: 200px;
 }
@@ -65,10 +65,30 @@ html, body {
 .image9 {
   height: 400px;
 }
+#carouselDeco {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
 .card-columns .card {
   min-width : 100%;
 }
-
+@media screen and (max-width: 1100px) {
+  #carouselDeco {
+    display:block;
+  }
+  #deco{
+    display:none;
+  }
+}
+@media screen and (min-width: 1101px){
+  #deco{
+    display:block;
+  }
+  #carouselDeco {
+    display: none;
+  }
+}
 /* Footer */
 #footerAncre .logoFooterMobile {
   display : none;
