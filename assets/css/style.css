@@ -6,33 +6,208 @@ html, body {
 }
 
 /* Header */
-.imgHeader {
-  position: relative;
-  height: 58em;
-  width: 100%;
-  /* opacity: 90%; */
+.headerBlock{
+  background-color: #dacb8d;
+  background-position: center;
+  background-image: url('../img/Ambiances/imgHeader.png');
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover;
+  /* position: relative; */
+  height: 950px;
 }
-.headerBlock div {
+.shopName{
   position: relative;
-  z-index: 1;
-}
-.shopName {
-  position: absolute;
   top: 25%;
-  left: 8%;
   font-family: Cinzel;
-  font-size: 5.5em;
+  font-size: 500%;
+  text-shadow: black 0.1em 0.1em 0.2em;
 }
-.moodCreator {
-  font-size: 2.5em;
-  position: absolute;
-  top: 65%;
-  left: 38%;
-  font-family: Cinzel;
+.moodCreator{
+  font-size: 200%;
+  position: relative;
+  top: 40%;
+  font-family: Oswald;
   color: #dacb8d;
   font-weight: bold;
-  /* Possibilité de mettre "font-weight: bold" avec la classe Boostrap 4 "font-weight-bold" */
+  text-shadow: black 0.1em 0.1em 0.2em;
 }
+.ephemeralEvent{
+  font-size: 300%;
+  position: relative;
+  top: 65%;
+  font-family: Cinzel;
+  color: #dacb8d;
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+@keyframes slidein {
+  from {
+    margin-bottom: 100%;
+    width: 300%;
+  }
+  to {
+    margin-bottom: 0%;
+    width: 100%;
+  }
+}
+.navbar-nav {
+  text-decoration: none;
+  display: inline-block;
+  /* width: 100%; */
+  position: relative;
+}
+.nav {
+  background-color: #background: #f3e2c7; /* Old browsers */
+background: -moz-linear-gradient(top, #f3e2c7 0%, #c19e67 50%, #b68d4c 51%, #e9d4b3 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #f3e2c7 0%,#c19e67 50%,#b68d4c 51%,#e9d4b3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3',GradientType=0 ); /* IE6-9 */;
+  list-style-type: none;
+  justify-content: space-around;
+}
+.nav-link {
+  color: #FFFF;
+  font-family: "Advent Pro";
+  font-size: 150%;
+}
+/* Chutes de neige */
+.snow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.snow__layer {
+  position: absolute;
+  left: -100px;
+  right: -100px;
+  -webkit-animation: wind 5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+          animation: wind 5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+  -webkit-perspective: 100px;
+          perspective: 100px;
+  -webkit-transform: translateX(-50px);
+      -ms-transform: translateX(-50px);
+          transform: translateX(-50px);
+}
+
+.snow__fall {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1900px;
+  background: url(snow-light.png);
+  -webkit-animation: fall 10s linear infinite;
+          animation: fall 10s linear infinite;
+}
+
+.snow__layer:nth-child(1) {
+  -webkit-animation-duration: 35s;
+          animation-duration: 35s;
+}
+
+.snow__layer:nth-child(1) .snow__fall {
+  background: url('../img/snow/snow-blur.png');
+  -webkit-transform: translateZ(25px);
+          transform: translateZ(25px);
+  -webkit-animation-name: fallblur;
+          animation-name: fallblur;
+  width: 4000px;
+  left: -2000px;
+}
+
+.snow__layer:nth-child(2) {
+  -webkit-animation: wind 5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+          animation: wind 5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+.snow__layer:nth-child(2) .snow__fall {
+  background: url('../img/snow/snow-medium.png');
+  -webkit-animation-duration: 25s;
+          animation-duration: 25s;
+}
+
+.snow__fall:nth-child(3) {
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  background-size: 250px;
+}
+
+.snow__fall:nth-child(2) {
+  -webkit-animation-duration: 20s;
+          animation-duration: 20s;
+  background-size: 500px;
+}
+
+.snow__layer:nth-child(4) .snow__fall {
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-transform: translateZ(50px);
+          transform: translateZ(50px);
+  -webkit-animation-name: falllight;
+          animation-name: falllight;
+}
+
+@-webkit-keyframes fall {
+  from {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+  }
+}
+
+@keyframes fall {
+  from {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+  }
+}
+
+@-webkit-keyframes falllight {
+  from {
+    -webkit-transform: translateY(-1000px) translateZ(50px);
+            transform: translateY(-1000px) translateZ(50px);
+  }
+}
+
+@keyframes falllight {
+  from {
+    -webkit-transform: translateY(-1000px) translateZ(75px);
+            transform: translateY(-1000px) translateZ(75px);
+  }
+}
+
+@-webkit-keyframes fallblur {
+  from {
+    -webkit-transform: translateY(-1000px) translateZ(35px);
+            transform: translateY(-1000px) translateZ(35px);
+  }
+}
+
+@keyframes fallblur {
+  from {
+    -webkit-transform: translateY(-1000px) translateZ(25px);
+            transform: translateY(-1000px) translateZ(25px);
+  }
+}
+
+@-webkit-keyframes wind {
+  to {
+    -webkit-transform: translateX(50px);
+            transform: translateX(50px);
+  }
+}
+
+@keyframes wind {
+  to {
+    -webkit-transform: translateX(150px);
+            transform: translateX(150px);
+  }
+}
+/* Fin chutes de neige */
 
 /* Modal */
 #boutonPanier, #boutonWishlist {
