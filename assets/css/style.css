@@ -77,14 +77,3 @@ html, body {
   #footerAncre .logoFooter {
     display : none;
   }
-=======
-.card-title{
-  color: #6e865f;
-  font-weight: bold;
-}
-.card-footer{
-  background-color: #6e865f;
-  color:white;
-  font-weight: bold;
->>>>>>> 92bb9d91f752d23fec4d7539352c17f0fba9e74e
-}
