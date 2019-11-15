@@ -45,13 +45,19 @@ html, body {
   border-left: 2px solid lightgrey;
 }
 /* Articles */
+.designation {
+    font-size: 1.5em;
+    color : black;
+}
 #colonneArticle .card-title{
   color: #6e865f;
   font-weight: bold;
+  font-family: 'Montserrat', sans-serif !important;
 }
 #colonneArticle .card-footer{
   background-color: #6e865f;
   color:white;
+  font-size: 1.5em;
   font-weight: bold;
 }
 /* Deco */
@@ -67,6 +73,14 @@ html, body {
 }
 
 /* Footer */
+
+#footerAncre .px-3{
+  color: #6e865f;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+
 #footerAncre .logoFooterMobile {
   display : none;
 }
