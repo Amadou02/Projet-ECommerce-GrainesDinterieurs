@@ -59,6 +59,9 @@ html, body {
   /* Ne jamais mettre " img " seul comme selcteur car ça affecte toutes les images de la page */
   height: 200px;
 }
+#deco img {
+  border: 4px solid white;
+}
 .image9 {
   height: 400px;
 }
