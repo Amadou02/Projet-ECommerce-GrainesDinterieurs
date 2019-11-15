@@ -44,7 +44,16 @@ html, body {
 #boutonWishlist {
   border-left: 2px solid lightgrey;
 }
-
+/* Articles */
+#colonneArticle .card-title{
+  color: #6e865f;
+  font-weight: bold;
+}
+#colonneArticle .card-footer{
+  background-color: #6e865f;
+  color:white;
+  font-weight: bold;
+}
 /* Deco */
 #deco .row img {
   /* Ne jamais mettre " img " seul comme selcteur car ça affecte toutes les images de la page */
@@ -68,4 +77,14 @@ html, body {
   #footerAncre .logoFooter {
     display : none;
   }
+=======
+.card-title{
+  color: #6e865f;
+  font-weight: bold;
+}
+.card-footer{
+  background-color: #6e865f;
+  color:white;
+  font-weight: bold;
+>>>>>>> 92bb9d91f752d23fec4d7539352c17f0fba9e74e
 }
