@@ -77,3 +77,13 @@ html, body {
   #footerAncre .logoFooter {
     display : none;
   }
+}
+.bg-contact {
+  background-color: #dacb8d;
+}
+#footerAncre h2 {
+  text-shadow: black 0.1em 0.1em 0.2em;
+}
+#footerAncre iframe {
+  width : 35%;
+}
