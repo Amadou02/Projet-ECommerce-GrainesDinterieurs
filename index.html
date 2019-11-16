@@ -9,18 +9,67 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css">
   <!-- Polices -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel|Montserrat&display=swap">
+  <link href="https://fonts.googleapis.com/css?family=Cinzel|Oswald&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cinzel|Oswald|Raleway&display=swap" rel="stylesheet">
 </head>
-<body class="container-fluid">
+<body class="container-fluid px-0">
   <header>
     <!-- Titre -->
-    <div class="headerBlock">
-      <div>
-        <h1 class="shopName text-white text-center">L'Atelier des Graines d'Intérieurs</h1>
-        <h2 class="moodCreator text-center">Créateur d'ambiances</h2>
-      </div>
-      <img class="imgHeader" src="assets/img/Ambiances/imgHeader.png" alt="Image de fond">
-    </div>
-    <nav>
+    <div class="row">
+      <div class="col">
+        <header class="container-fluid pl-0 pr-0">
+          <div class="row">
+            <div class="headerBlock col-lg-12">
+          <!-- Début chutes de neige -->
+              <div class="snow">
+                <div class="snow__layer"><div class="snow__fall"></div></div>
+                <div class="snow__layer"><div class="snow__fall"></div></div>
+                <div class="snow__layer">
+                  <div class="snow__fall"></div>
+                  <div class="snow__fall"></div>
+                  <div class="snow__fall"></div>
+                </div>
+                <div class="snow__layer"><div class="snow__fall"></div></div>
+              </div>
+              <h1 class="shopName text-white text-center">L'Atelier des Graines d'Intérieurs</h1>
+              <h2 class="moodCreator text-center">Créateur d'ambiances</h2>
+              <p class="ephemeralEvent text-center">Collection de Noël</p>
+            </div>
+          </div>
+          <!-- Fin chutes de neige -->
+          <!-- Début de la barre de navigation -->
+
+            <div class="container-fluid px-0">
+              <nav class="navbar navbar-expand-lg">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Accueil<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Bougies</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Objets déco</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Luminaires</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Déco murale</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Meubles</a>
+                    </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="searchButton" type="submit">Search</button>
+                  </form>
+                </div>
+              </nav>
+            <!-- Fin de la barre de navigation -->
       <div class="d-flex">
         <button type="button" id="boutonPanier" class="btn btn-sm btn-dark btn-block w-50 py-1" data-toggle="modal" data-target="#modalPanier">
           <img class="mr-4" width="30" src="https://image.flaticon.com/icons/svg/34/34627.svg" alt="Logo Panier">
