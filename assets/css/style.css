@@ -3,12 +3,10 @@ html, body {
   height: 100%;
   scroll-behavior: smooth;
   overflow: auto;
+  overflow-x: hidden;
 }
 
 /* Header */
-header {
-  overflow: hidden;
-}
 .headerBlock{
   background-color: #dacb8d;
   background-position: center;
@@ -107,7 +105,7 @@ header {
   left: 0;
   right: 0;
   height: 1900px;
-  background: url(snow-light.png);
+  background: url('../img/snow/snow-light.png');
   -webkit-animation: fall 10s linear infinite;
   animation: fall 10s linear infinite;
 }
