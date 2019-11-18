@@ -2,8 +2,9 @@ $(function(){
   // Déclaration des variables
   var articleName, articleRef, articlePrice, articleQuantity = 1, article;
   var panier = [], wishlist = [];
-  var tr, _tr = '</tr>', td1, td2, td3, td4, td5, _td = '</td>';
+  var tr, _tr = '</tr>', td1, td2, btn, td3, td4, td5, _td = '</td>';
   var total = [], prixTotal = 0;
+  var plus = 1, moins = 1, recalculPrix = 0;
   // Ajout au panier à l'appuie du bouton
   $('.boutonAchatPanier').click(function(){
     // Récupération des informations de l'article
@@ -15,7 +16,8 @@ $(function(){
     tr = '<tr id="' + articleRef +  '" class="text-center article_panier">';
     td1 = '<td class="' + articleRef + 'Ref article_ref" scope="row">';
     td2 = '<td class="' + articleRef + 'Name article_name">';
-    td3 = '<td id="' + articleRef + 'Quantity" class="article_quantity">';
+    btn = '<div class="btn-group ml-auto" role="group"><button class="boutonMoins btn btn-sm btn-dark p-2">-</button><button class="boutonPlus btn btn-sm btn-dark p-2">+</button></div>'
+    td3 = '<td id="' + articleRef + 'Quantity" class="article_quantity d-flex">';
     td4 = '<td class="' + articleRef + 'Price article_price">';
     td5 = '<td>\n<button id="deleteButton" class="btn btn-light mx-auto"></button>\n</td>';
     // Vérification si l'article est déjà dans le panier
@@ -33,14 +35,34 @@ $(function(){
       }
       articleQuantity = 1
       panier += article
-      $('#modalPanier #panierVide').after(tr + '\n' + td1 + articleRef + _td + '\n' + td2 + articleName + _td + '\n' + td3 + articleQuantity + _td  + '\n' + td4 + articlePrice + _td + '\n' + td5 + '\n' +  _tr)
+      $('#modalPanier #panierVide').after(tr + '\n' + td1 + articleRef + _td + '\n' + td2 + articleName + _td + '\n' + td3 + '<div class="getQuantity">' + articleQuantity + '</div>' + btn + _td  + '\n' + td4 + articlePrice + _td + '\n' + td5 + '\n' +  _tr)
     }
+    // Bouton pour supprimer un article
     $('#deleteButton').click(function(){
       $(this).parent().parent().hide()
-      // Problème : col-span 5 saute lors du .show()
-      if (!($('#modalPanier tbody tr').is(':visible'))){
-        $('#panierVide').show()
+    });
+    // Modification de la quantité avec les boutons
+    $('.boutonPlus').click(function(){
+      var priceRef = $(this).parent().parent().siblings('.article_ref').html()
+      // Récupérer le pric original pour éviter l'inflation
+      var price = ($('.' + priceRef).parent().siblings('.card-footer').children('.price').html()).slice(0, -2)
+      plus = Number($('.getQuantity').html()) + 1
+      $('.getQuantity').html(plus)
+      recalculPrix = (Number(price) * plus).toFixed(2)
+      $(this).parent().parent().siblings('.article_price').html(recalculPrix + ' €')
+    });
+    $('.boutonMoins').click(function(){
+      var priceRef = $(this).parent().parent().siblings('.article_ref').html()
+      var price = ($('.' + priceRef).parent().siblings('.card-footer').children('.price').html()).slice(0, -2)
+      // Vérification si la quantité n'est pas négative
+      if (Number($('.getQuantity').html()) > 0){
+        moins = Number($('.getQuantity').html()) - 1
+      } else {
+        return false
       }
+      $('.getQuantity').html(moins)
+      recalculPrix = (Number(price) * moins).toFixed(2)
+      $(this).parent().parent().siblings('.article_price').html(recalculPrix + ' €')
     });
   });
   // Ajout à la Wishlist à l'appuie du bouton
@@ -56,16 +78,9 @@ $(function(){
     td2 = '<td class="' + articleRef + 'NameWish article_name_wish">';
     td3 = '<td id="' + articleRef + 'QuantityWish" class="article_quantity_wish">';
     td4 = '<td class="' + articleRef + 'PriceWish article_price_wish">';
-    td5 = '<td>\n<button id="deleteButton" class="btn btn-light mx-auto"></button>\n</td>';
+    td5 = '<td>\n<button id="deleteButtonWishlist" class="btn btn-light mx-auto"></button>\n</td>';
     // Vérification si l'article est déjà dans la wishlist
-    if (wishlist.includes(articleName)){
-      // Si oui, incrémentation de la quantité
-      articleQuantity = Number($('#' + articleRef + 'QuantityWish').html()) + 1
-      articlePrice = (articlePrice.slice(0, -2) * articleQuantity).toFixed(2) + ' €'
-      $('#' + articleRef + 'QuantityWish').html(articleQuantity)
-      $('.' + articleRef + 'PriceWish').html(articlePrice)
-    } else {
-      // Si non, ajout d'un nouvel article à la wishlist
+    if (!wishlist.includes(articleName)){
       // Suppression du message du paneier vide à l'ajout du premier article
       if ($('#messageWishlistVide').css('display', 'table-row')){
         $('#wishlistVide').hide()
@@ -74,7 +89,8 @@ $(function(){
       wishlist += article
       $('#modalWishlist #wishlistVide').after(tr + '\n' + td1 + articleRef + _td + '\n' + td2 + articleName + _td + '\n' + td3 + articleQuantity + _td  + '\n' + td4 + articlePrice + _td + '\n' + td5 + '\n' +  _tr)
     }
-    $('#deleteButton').click(function(){
+    // Bouton pour supprimer un article
+    $('#deleteButtonWishlist').click(function(){
       $(this).parent().parent().hide()
     });
   });

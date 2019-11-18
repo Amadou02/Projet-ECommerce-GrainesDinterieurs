@@ -218,7 +218,7 @@ html, body {
 /* #deleteButton img {
   width: 12%;
 } */
-#deleteButton {
+#deleteButton, #deleteButtonWishlist {
   display: block;
   width: 20%;
   background-position: center;
