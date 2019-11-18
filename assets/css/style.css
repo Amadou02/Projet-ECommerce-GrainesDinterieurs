@@ -307,9 +307,17 @@ html, body {
 @media only screen and (max-width: 990px) {
   .nav-link {
     background-color: #c6a571;
+    z-index: 1;
+    font-size: 3vw;
   }
   .navbar{
-    
+    z-index: 1;
+  }
+  .carousel-control-next{
+    display: none;
+  }
+  .carousel-control-prev{
+    display: none;
   }
 @media only screen and (max-width: 880px) {
   #iframWide {
@@ -320,7 +328,6 @@ html, body {
     width: 100% !important;
   }
 }
-
 #footerAncre .px-3{
   color: #6e865f;
   font-weight: bold;
