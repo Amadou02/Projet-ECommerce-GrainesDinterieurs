@@ -5,13 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css">
-
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
   <!-- Polices -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel%7CMontserrat&display=swap">
   <link href="https://fonts.googleapis.com/css?family=Cinzel%7COswald&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Cinzel%7COswald%7CRaleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body class="container-fluid px-0">
   <header>
@@ -72,8 +73,8 @@
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="searchButton" type="submit">Search</button>
+            <input class="form-control mr-sm-2" type="text" placeholder="Bientôt disponible" aria-label="Search" disabled>
+            <button class="searchButton" type="submit">Filtrer</button>
           </form>
         </div>
       </div>
@@ -81,48 +82,88 @@
     <!-- Fin de la barre de navigation -->
     <div class="d-flex">
       <button type="button" id="boutonPanier" class="btn btn-sm btn-dark btn-block w-50 py-1" data-toggle="modal" data-target="#modalPanier">
-        <img class="mr-4" width="50" src="https://image.flaticon.com/icons/svg/34/34627.svg" alt="Logo Panier">
+        <img class="mr-4" width="30" src="https://image.flaticon.com/icons/svg/34/34627.svg" alt="Logo Panier">
         Mon Panier
       </button>
       <button type="button" id="boutonWishlist" class="btn btn-sm btn-dark btn-block w-50 py-1 mt-0" data-toggle="modal" data-target="#modalWishlist">
-        <img class="mr-4" width="50" src="https://image.flaticon.com/icons/svg/868/868517.svg" alt="Logo Wishlist">
+        <img class="mr-4" width="30" src="https://image.flaticon.com/icons/svg/868/868517.svg" alt="Logo Wishlist">
         Ma Wishlist
       </button>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="modalPanier" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Panier</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <div class="modal-header bg-rougePanier">
+            <h5 class="modal-title text-white">Panier</h5>
+            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            ...
+            <div class="modal-body">
+
+              <table class="table">
+                <thead>
+                  <tr class="text-center">
+                    <th class="bg-lightgrey py-2">Ref</th>
+                    <th class="bg-lightgrey py-2">Nom</th>
+                    <th class="bg-lightgrey py-2">Quantité</th>
+                    <th class="bg-lightgrey py-2">Prix</th>
+                    <th class="bg-lightgrey py-2">Supprimer</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-center" id="panierVide">
+                    <td colspan="5" id="messagePanierVide">Votre panier est vide !</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+            <button id="boutonPanierCheckout" class="btn btn-primary">Checkout</button>
           </div>
         </div>
       </div>
     </div>
     <!-- Modal Wishlist -->
     <div class="modal fade" id="modalWishlist" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog" role="document">
+      <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Wishlist</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <div class="modal-header bg-vertWishlist">
+            <h5 class="modal-title text-white">Wishlist</h5>
+            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            ...
+            <div class="modal-body">
+
+              <table class="table">
+                <thead>
+                  <tr class="text-center">
+                    <th class="bg-lightgrey py-2">Ref</th>
+                    <th class="bg-lightgrey py-2">Nom</th>
+                    <th class="bg-lightgrey py-2">Quantité</th>
+                    <th class="bg-lightgrey py-2">Prix</th>
+                    <th class="bg-lightgrey py-2">Supprimer</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-center" id="wishlistVide">
+                    <td colspan="5" id="messageWishlistVide">Votre wishlist est vide !</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+            <button id="boutonAjouterPanier" class="btn btn-primary">Ajouter au panier</button>
           </div>
         </div>
       </div>
@@ -158,94 +199,247 @@
   </header>
   <!-- Début : Colonne de carte pour présentation d'articles -->
   <div id="colonneArticle" class="card-columns row-fluid text-center p-4">
-    <div>
-      <div class="card col-4">
-        <h4 class="card-title">Applique murale rotin</h4>
-        <img width="300" src="assets/img/Articles/applique-murale-rotin-69€.jpg" alt="Applique murale rotin" />
-        <div class="card-body"></div>
-        <div class="card-footer">69.00 €</div>
-      </div>
 
-      <div class="card col-4">
-        <h4 class="card-title">Bougie Ellipse Woodwick</h4>
-        <img width="300" src="assets/img/Articles/bougie-ELlipse-Woodwick-36.90-€.jpg" alt="bougie Ellipse woodwick" />
-        <div class="card-body"></div>
-        <div class="card-footer">36.90 €</div>
+    <div class="card col-4">
+      <h4 class="card-title">Applique murale rotin</h4>
+      <img width="300" src="assets/img/Articles/applique-murale-rotin-69€.jpg" alt="Applique murale rotin" />
+      <div class="card-body">
+        <h6 class="1627720">Réf 1627720</h6>
+        <p class="designation">Applique murale en rotin</p>
       </div>
-
-      <div class="card col-4">
-        <h4 class="card-title">Cheval bois</h4>
-        <img width="300" src="assets/img/Articles/Cheval-bois-62€.jpg" alt="Cheval bois" />
-        <div class="card-body"></div>
-        <div class="card-footer">62.00 €</div>
+      <div class="card-footer d-flex justify-content-around">
+        <div class="price text-center align-self-center">69.00 €</div>
+        <div class="d-flex">
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatPanier" data-toggle="modal" data-target="#modalPanier">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/34/34627.svg" alt="Logo Panier">
+          </button>
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatWishlist border-left border-dark mt-0" data-toggle="modal" data-target="#modalWishlist">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/868/868517.svg" alt="Logo Wishlist">
+          </button>
+        </div>
       </div>
-
-      <div class="card col-4">
-        <h4 class="card-title">Etagére murale</h4>
-        <img width="300" src="assets/img/Articles/etagére-murale-54€.jpg" alt="Coffret Noêl Woodwick" />
-        <div class="card-body"></div>
-        <div class="card-footer">54.00 €</div>
-      </div>
-
-      <div class="card col-4">
-        <h4 class="card-title">Coussin personnalisé SJ</h4>
-        <img width="300" src="assets/img/Articles/coussin-personnalisé-SJ-39€.jpg" alt="Coussin Noël personnalisé SJ" />
-        <div class="card-body"></div>
-        <div class="card-footer">39.00 €</div>
-      </div>
-
-      <div class="card col-4">
-        <h4 class="card-title">Buste cheval</h4>
-        <img width="300" src="assets/img/Articles/buste-cheval-67€.jpg" alt="Buste cheval" />
-        <div class="card-body"></div>
-        <div class="card-footer">67.00 €</div>
-        <div class="card col"></div>
-      </div>
-
-      <div class="card col-4">
-        <h4 class="card-title">Fauteuil design cuir</h4>
-        <img width="300" src="assets/img/Articles/fauteuil-desing-cuir-479€.jpg" alt="fauteuil design cuir" />
-        <div class="card-body"></div>
-        <div class="card-footer">479.00 €</div>
-      </div>
-
-      <div class="card col-4">
-        <h4 class="card-title">Grande horloge</h4>
-        <img width="300" src="assets/img/Articles/Grande-horloge-169€.jpg" alt="Grande horloge" />
-        <div class="card-body"></div>
-        <div class="card-footer">169.00 €</div>
-      </div>
-
-      <div class="card col-4">
-        <h4 class="card-title">Horloge</h4>
-        <img width="300" src="assets/img/Articles/Horloge-107€.jpg" alt="Horloge" />
-        <div class="card-body"></div>
-        <div class="card-footer">107.00 €</div>
-      </div>
-
-      <div class="card col-4">
-        <h4 class="card-title">Grande horloge métal </h4>
-        <img width="300" src="assets/img/Articles/Grande-horloge-metal-169€.jpg" alt="Grande horloge métal" />
-        <div class="card-body"></div>
-        <div class="card-footer">169.00 €</div>
-      </div>
-
-      <div class="card col-4">
-        <h4 class="card-title">Lampe à poser</h4>
-        <img width="300" src="assets/img/Articles/lampe-à-poser-79€.jpg" alt="Lampe à poser" />
-        <div class="card-body"></div>
-        <div class="card-footer">79.00 €</div>
-      </div>
-
-      <div class="card col-4">
-        <h4 class="card-title">Lampe à poser verre teinté dans la masse</h4>
-        <img width="300" src="assets/img/Articles/lampe-à-poser-verre-teinté-dans-la-masse-189€.jpg" alt="Lampe à poser verre teinté dans la masse" />
-        <div class="card-body"></div>
-        <div class="card-footer">189.00 €</div>
-        <!-- <div class="card-footer">Footer</div>-->
-      </div>
-      >>>>>>> origin/header
     </div>
+
+    <div class="card col-4">
+      <h4 class="card-title">Bougie Ellipse Woodwick</h4>
+      <img width="300" src="assets/img/Articles/bougie-ELlipse-Woodwick-36.90-€.jpg" alt="bougie Ellipse woodwick" />
+      <div class="card-body">
+        <h6 class="1627721">Réf 1627721</h6>
+        <p class="designation">Bougie parfumée Woodwick Ellipse</p>
+      </div>
+      <div class="card-footer d-flex justify-content-around">
+        <div class="price text-center align-self-center">36.90 €</div>
+        <div class="d-flex">
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatPanier" data-toggle="modal" data-target="#modalPanier">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/34/34627.svg" alt="Logo Panier">
+          </button>
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatWishlist border-left border-dark mt-0" data-toggle="modal" data-target="#modalWishlist">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/868/868517.svg" alt="Logo Wishlist">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-4">
+      <h4 class="card-title">Cheval bois</h4>
+      <img width="300" src="assets/img/Articles/Cheval-bois-62€.jpg" alt="Cheval bois" />
+      <div class="card-body">
+        <h6 class="1627722">Réf 1627722</h6>
+        <p class="designation">Cheval bois en manguier sculpté</p>
+      </div>
+      <div class="card-footer d-flex justify-content-around">
+        <div class="price text-center align-self-center">62.00 €</div>
+        <div class="d-flex">
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatPanier" data-toggle="modal" data-target="#modalPanier">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/34/34627.svg" alt="Logo Panier">
+          </button>
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatWishlist border-left border-dark mt-0" data-toggle="modal" data-target="#modalWishlist">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/868/868517.svg" alt="Logo Wishlist">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-4">
+      <h4 class="card-title">Etagére murale</h4>
+      <img width="300" src="assets/img/Articles/etagére-murale-54€.jpg" alt="Coffret Noêl Woodwick" />
+      <div class="card-body">
+        <h6 class="1627723">Réf 1627723</h6>
+        <p class="designation">Etagére hexagonale en métal noir</p>
+      </div>
+      <div class="card-footer d-flex justify-content-around">
+        <div class="price text-center align-self-center">54.00 €</div>
+        <div class="d-flex">
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatPanier" data-toggle="modal" data-target="#modalPanier">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/34/34627.svg" alt="Logo Panier">
+          </button>
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatWishlist border-left border-dark mt-0" data-toggle="modal" data-target="#modalWishlist">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/868/868517.svg" alt="Logo Wishlist">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-4">
+      <h4 class="card-title">Coussin personnalisé SJ</h4>
+      <img width="300" src="assets/img/Articles/coussin-personnalisé-SJ-39€.jpg" alt="Coussin personnalisé SJ" />
+      <div class="card-body">
+        <h6  class="1627724">Réf 1627724</h6>
+        <p class="designation">Coussin coton  60 x 60</p>
+      </div>
+      <div class="card-footer d-flex justify-content-around">
+        <div class="price text-center align-self-center">39.00 €</div>
+        <div class="d-flex">
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatPanier" data-toggle="modal" data-target="#modalPanier">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/34/34627.svg" alt="Logo Panier">
+          </button>
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatWishlist border-left border-dark mt-0" data-toggle="modal" data-target="#modalWishlist">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/868/868517.svg" alt="Logo Wishlist">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-4">
+      <h4 class="card-title">Buste cheval</h4>
+      <img width="300" src="assets/img/Articles/buste-cheval-67€.jpg" alt="Buste cheval" />
+      <div class="card-body">
+        <h6  class="1627725">Réf 1627725</h6>
+        <p class="designation">Buste cheval en manguier sculpté</p>
+      </div>
+      <div class="card-footer d-flex justify-content-around">
+        <div class="price text-center align-self-center">67.00 €</div>
+        <div class="d-flex">
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatPanier" data-toggle="modal" data-target="#modalPanier">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/34/34627.svg" alt="Logo Panier">
+          </button>
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatWishlist border-left border-dark mt-0" data-toggle="modal" data-target="#modalWishlist">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/868/868517.svg" alt="Logo Wishlist">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-4">
+      <h4 class="card-title">Fauteuil design cuir</h4>
+      <img width="300" src="assets/img/Articles/fauteuil-desing-cuir-479€.jpg" alt="fauteuil design cuir" />
+      <div class="card-body">
+        <h6 class="1627726">Réf 1627726</h6>
+        <p class="designation">Fauteuil desing cuir</p>
+      </div>
+      <div class="card-footer d-flex justify-content-around">
+        <div class="price text-center align-self-center">479.00 €</div>
+        <div class="d-flex">
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatPanier" data-toggle="modal" data-target="#modalPanier">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/34/34627.svg" alt="Logo Panier">
+          </button>
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatWishlist border-left border-dark mt-0" data-toggle="modal" data-target="#modalWishlist">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/868/868517.svg" alt="Logo Wishlist">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-4">
+      <h4 class="card-title">Grande horloge</h4>
+      <img width="300" src="assets/img/Articles/Grande-horloge-169€.jpg" alt="Grande horloge" />
+      <div class="card-body">
+        <h6  class="1627727">Réf 1627727</h6>
+        <p class="designation">Grande horloge motif vintage</p>
+      </div>
+      <div class="card-footer d-flex justify-content-around">
+        <div class="price text-center align-self-center">169.00 €</div>
+        <div class="d-flex">
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatPanier" data-toggle="modal" data-target="#modalPanier">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/34/34627.svg" alt="Logo Panier">
+          </button>
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatWishlist border-left border-dark mt-0" data-toggle="modal" data-target="#modalWishlist">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/868/868517.svg" alt="Logo Wishlist">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-4">
+      <h4 class="card-title">Horloge</h4>
+      <img width="300" src="assets/img/Articles/Horloge-107€.jpg" alt="Horloge" />
+      <div class="card-body">
+        <h6 class="1627728">Réf 1627728</h6>
+        <p class="designation">Horloge style industriel</p>
+      </div>
+      <div class="card-footer d-flex justify-content-around">
+        <div class="price text-center align-self-center">107.00 €</div>
+        <div class="d-flex">
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatPanier" data-toggle="modal" data-target="#modalPanier">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/34/34627.svg" alt="Logo Panier">
+          </button>
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatWishlist border-left border-dark mt-0" data-toggle="modal" data-target="#modalWishlist">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/868/868517.svg" alt="Logo Wishlist">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-4">
+      <h4 class="card-title">Grande horloge métal</h4>
+      <img width="300" src="assets/img/Articles/Grande-horloge-metal-169€.jpg" alt="Grande horloge métal" />
+      <div class="card-body">
+        <h6  class="1627729">Réf 1627729</h6>
+        <p class="designation">Grande horloge métal style industriel</p>
+      </div>
+      <div class="card-footer d-flex justify-content-around">
+        <div class="price text-center align-self-center">169.00 €</div>
+        <div class="d-flex">
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatPanier" data-toggle="modal" data-target="#modalPanier">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/34/34627.svg" alt="Logo Panier">
+          </button>
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatWishlist border-left border-dark mt-0" data-toggle="modal" data-target="#modalWishlist">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/868/868517.svg" alt="Logo Wishlist">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-4">
+      <h4 class="card-title">Lampe à poser</h4>
+      <img width="300" src="assets/img/Articles/lampe-à-poser-79€.jpg" alt="Lampe à poser" />
+      <div class="card-body">
+        <h6 class="1627730">Réf 1627730</h6>
+        <p class="designation">Lampe à poser</p>
+      </div>
+      <div class="card-footer d-flex justify-content-around">
+        <div class="price text-center align-self-center">179.00 €</div>
+        <div class="d-flex">
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatPanier" data-toggle="modal" data-target="#modalPanier">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/34/34627.svg" alt="Logo Panier">
+          </button>
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatWishlist border-left border-dark mt-0" data-toggle="modal" data-target="#modalWishlist">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/868/868517.svg" alt="Logo Wishlist">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card col-4">
+      <h4 class="card-title">Lampe à poser</h4>
+      <img width="300" src="assets/img/Articles/lampe-à-poser-verre-teinté-dans-la-masse-189€.jpg" alt="Lampe à poser verre teinté dans la masse" />
+      <div class="card-body">
+        <h6  class="1627731">Réf 1627731</h6>
+        <p class="designation">Lampe à poser verre teinté dans la masse</p>
+      </div>
+      <div class="card-footer d-flex justify-content-around">
+        <div class="price text-center align-self-center">189.00 €</div>
+        <div class="d-flex">
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatPanier" data-toggle="modal" data-target="#modalPanier">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/34/34627.svg" alt="Logo Panier">
+          </button>
+          <button type="button" class="btn btn-sm btn-light w-50 boutonAchatWishlist border-left border-dark mt-0" data-toggle="modal" data-target="#modalWishlist">
+            <img class="mx-auto" width="30" src="https://image.flaticon.com/icons/svg/868/868517.svg" alt="Logo Wishlist">
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="card-footer">Footer</div>-->
   </div>
   <!-- Fin : Colomne de carte pour présentation d'articles -->
   <!-- début : inspi déco -->
@@ -284,65 +478,64 @@
     </div>
   </div>
   <!-- fin : inspi déco -->
-  <footer id="footerAncre" class="bg-dark">
+  <footer id="footerAncre" class="bg-contact pt-4">
     <!-- Partie contact -->
-    <div class="row-fluid p-0 m-0 text-center">
-      <h3 class="text-white">- Contact -</h3>
-      <div class="d-flex py-4">
-        <div class="text-left bg-white rounded-lg mx-3 w-80">
+    <div class="row-fluid p-0 text-center">
+      <h2 class="text-white">- Contact -</h2>
+      <div class="d-flex justify-content-around py-4">
+        <div class="text-left bg-white rounded-lg">
           <p class="px-3 pt-2">Notre magasin : 31 rue paul bignon, 76260 Eu, Haute-Normandie, France</p>
           <p class="px-3">Notre téléphone : 06.77.62.26.63</p>
           <p class="px-3">Notre mail : sandie.pottier@grainesdinterieurs.fr</p>
-          <div class="d-flex justify-content-around mt-3 mx-auto w-50">
-            <img class="mb-3" width="80" src="https://image.flaticon.com/icons/svg/1051/1051262.svg" alt="Instagram logo">
-            <img class="mb-3" width="80" src="https://image.flaticon.com/icons/svg/1051/1051258.svg" alt="Facebook logo">
+          <div class="d-flex justify-content-around mx-auto w-50">
+            <a href="https://www.instagram.com/explore/locations/700772750038746/latelier-des-graines-dinterieurs" target="_blank"><img class="mb-3" width="80" src="https://image.flaticon.com/icons/svg/1051/1051262.svg" alt="Instagram logo"></a>
+            <a href="https://www.facebook.com/LAtelier-Des-Graines-DInt%C3%A9rieurs-700772750038746/" target="_blank"><img class="mb-3" width="80" src="https://image.flaticon.com/icons/svg/1051/1051258.svg" alt="Facebook logo"></a>
           </div>
         </div>
         <div class="text-center logoFooter">
           <img src="assets/img/Logo/logo.png" alt="logo" width="230" class="img-responsive">
         </div>
+        <iframe id="iframWide" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.067590358492!2d1.4169009514008095!3d50.047565124092166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47de005ec96eaaab%3A0x7ce7ee65fc69ab8a!2s31%20Rue%20Paul%20Bignon%2C%2076260%20Eu!5e0!3m2!1sfr!2sfr!4v1573816936400!5m2!1sfr!2sfr"></iframe>
       </div>
-      <div class="text-center mx-auto logoFooterMobile mb-3">
-        <img src="assets/img/Logo/logo.png" alt="logo" width="230" class="img-responsive">
+      <iframe id="iframMobile" width="100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.067590358492!2d1.4169009514008095!3d50.047565124092166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47de005ec96eaaab%3A0x7ce7ee65fc69ab8a!2s31%20Rue%20Paul%20Bignon%2C%2076260%20Eu!5e0!3m2!1sfr!2sfr!4v1573816936400!5m2!1sfr!2sfr"></iframe>
+      <div class="text-center mx-auto logoFooterMobile mb-3"></div>
+      <!-- Modale des mentions légales -->
+      <div class="btn-toolbar justify-content-center pt-1">
+        <button type="button" class="btn btn-sm btn-light" data-toggle="modal" data-target="#modalFooter">Mentions Légales</button>
       </div>
-    </div>
-
-    <!-- Modale des mentions légales -->
-    <div class="btn-toolbar justify-content-center pt-1">
-      <button type="button" class="btn btn-sm btn-light" data-toggle="modal" data-target="#modalFooter">Mentions Légales</button>
-    </div>
-    <div class="modal fade" id="modalFooter">
-      <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <span class="modal-title font-weight-bold">Mentions Légales</span>
-            <button type="button" class="close font-weight-bold" data-dismiss="modal">×</button>
-          </div>
-          <div class="modal-body text-center">
-            <span class="font-weight-bold">Clause de non-responsabilité</span>
-            <hr>
-            <p>
-              Si vous avez besoin de plus amples renseignements ou si vous avez des questions au sujet de la clause de non-responsabilité de notre site, n'hésitez pas à me contacter par courriel à sandie.pottier@grainesdinterieurs.fr.
-            </p>
-            <hr>
-            <p>
-              Toutes les informations contenues sur ce site Web sont publiées de bonne foi et à titre d'information générale uniquement. " L'atelier Graines d'Intérieurs " ne donne aucune garantie quant à l'exhaustivité, la fiabilité et l'exactitude de ces informations. Toute action que vous entreprenez sur l'information que vous trouvez sur ce site Web, est strictement à vos propres risques. " L'atelier Graines d'Intérieurs " ne sera pas responsable des pertes et/ou dommages liés à l'utilisation de notre site web.
-              À partir de notre site E-commerce, vous pouvez visiter d'autres sites Web en suivant des hyperliens vers des sites externes. Bien que nous nous efforçons de ne fournir que des liens de qualité vers des sites Web utiles et éthiques, nous n'avons aucun contrôle sur le contenu et la nature de ces sites. Ces liens vers d'autres sites n'impliquent pas une recommandation pour l'ensemble du contenu de ces sites. Les propriétaires et le contenu du site peuvent changer sans préavis et peuvent survenir avant que nous ayons la possibilité de supprimer un lien qui a pu " mal tourner ".
-              Sachez également que lorsque vous quittez notre site Web, d'autres sites peuvent avoir des politiques de confidentialité et des conditions différentes qui sont indépendantes de notre volonté. Veuillez-vous assurer de vérifier les politiques de confidentialité de ces sites ainsi que leurs conditions d'utilisation avant de vous engager dans toute activité commerciale ou de télécharger toute information.
-            </p>
-            <span class="font-weight-bold">Consentement</span>
-            <hr>
-            <p>
-              En utilisant notre site Web, vous consentez par la présente à cette clause de non-responsabilité et en acceptez les conditions.
-            </p>
-            <span class="font-weight-bold">Mises à jour</span>
-            <hr>
-            <p>
-              Si nous mettons à jour, modifions ou apportons des changements à ce document, ces changements seront affichés bien en vue ici.
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-dark m-auto" data-dismiss="modal">× Fermer</button>
+      <div class="modal fade" id="modalFooter">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="modal-title font-weight-bold">Mentions Légales</span>
+              <button type="button" class="close font-weight-bold" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-body text-center">
+              <span class="font-weight-bold">Clause de non-responsabilité</span>
+              <hr>
+              <p>
+                Si vous avez besoin de plus amples renseignements ou si vous avez des questions au sujet de la clause de non-responsabilité de notre site, n'hésitez pas à me contacter par courriel à sandie.pottier@grainesdinterieurs.fr.
+              </p>
+              <hr>
+              <p>
+                Toutes les informations contenues sur ce site Web sont publiées de bonne foi et à titre d'information générale uniquement. " L'atelier Graines d'Intérieurs " ne donne aucune garantie quant à l'exhaustivité, la fiabilité et l'exactitude de ces informations. Toute action que vous entreprenez sur l'information que vous trouvez sur ce site Web, est strictement à vos propres risques. " L'atelier Graines d'Intérieurs " ne sera pas responsable des pertes et/ou dommages liés à l'utilisation de notre site web.
+                À partir de notre site E-commerce, vous pouvez visiter d'autres sites Web en suivant des hyperliens vers des sites externes. Bien que nous nous efforçons de ne fournir que des liens de qualité vers des sites Web utiles et éthiques, nous n'avons aucun contrôle sur le contenu et la nature de ces sites. Ces liens vers d'autres sites n'impliquent pas une recommandation pour l'ensemble du contenu de ces sites. Les propriétaires et le contenu du site peuvent changer sans préavis et peuvent survenir avant que nous ayons la possibilité de supprimer un lien qui a pu " mal tourner ".
+                Sachez également que lorsque vous quittez notre site Web, d'autres sites peuvent avoir des politiques de confidentialité et des conditions différentes qui sont indépendantes de notre volonté. Veuillez-vous assurer de vérifier les politiques de confidentialité de ces sites ainsi que leurs conditions d'utilisation avant de vous engager dans toute activité commerciale ou de télécharger toute information.
+              </p>
+              <span class="font-weight-bold">Consentement</span>
+              <hr>
+              <p>
+                En utilisant notre site Web, vous consentez par la présente à cette clause de non-responsabilité et en acceptez les conditions.
+              </p>
+              <span class="font-weight-bold">Mises à jour</span>
+              <hr>
+              <p>
+                Si nous mettons à jour, modifions ou apportons des changements à ce document, ces changements seront affichés bien en vue ici.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-dark m-auto" data-dismiss="modal">× Fermer</button>
+            </div>
           </div>
         </div>
       </div>

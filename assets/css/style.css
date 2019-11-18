@@ -9,10 +9,7 @@ html, body {
 .headerBlock{
   background-color: #dacb8d;
   background-position: center;
-  background-image: url('../img/Ambiances/imgHeader.png');
-  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
-  background-size: cover;
-  height: 950px;
+  height: auto;
 }
 .shopName{
   position: absolute;
@@ -66,7 +63,7 @@ html, body {
   color: #FFFF;
   text-shadow: black 0.2em 0.2em 0.3em;
   font-family: "Cinzel";
-  font-size: 1.5rem;
+  font-size: 120%;
 }
 .searchButton{
   font-family: "Oswald";
@@ -119,7 +116,7 @@ html, body {
   left: 0;
   right: 0;
   height: 1900px;
-  background: url(snow-light.png);
+  background: url('../img/snow/snow-light.png');
   -webkit-animation: fall 10s linear infinite;
   animation: fall 10s linear infinite;
 }
@@ -212,6 +209,15 @@ html, body {
   }
 }
 /* Fin chutes de neige */
+/* Panier */
+#deleteButton, #deleteButtonWishlist {
+  display: block;
+  width: 20%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('https://image.flaticon.com/icons/svg/1214/1214428.svg');
+}
 /* Modal */
 #boutonPanier, #boutonWishlist {
   font-size: 150%;
@@ -286,6 +292,19 @@ html, body {
   }
 }
 /* Footer */
+#iframMobile {
+  display: none;
+}
+@media only screen and (max-width: 880px) {
+  #iframWide {
+    display: none;
+  }
+  #iframMobile {
+    display: block;
+    width: 100% !important;
+  }
+}
+
 #footerAncre .px-3{
   color: #6e865f;
   font-weight: bold;
