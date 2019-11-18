@@ -59,7 +59,6 @@ html, body {
   max-height: 20px;
   z-index: 1;
 }
-
 .nav-link {
   color: #FFFF;
   text-shadow: black 0.2em 0.2em 0.3em;
@@ -281,25 +280,27 @@ html, body {
 .card-columns .card {
   min-width : 100%;
 }
+/* media queries carouselDeco */
 @media screen and (max-width: 1100px) {
   #carouselDeco {
-    display:block;
+    display: block;
   }
-  #deco{
-    display:none;
+  #deco {
+    display: none;
   }
   .nav-link{
     font-size: 1.5vw;
   }
 }
 @media screen and (min-width: 1101px){
-  #deco{
-    display:block;
+  #deco {
+    display: block;
   }
   #carouselDeco {
     display: none;
   }
 }
+/* fin inspi deco */
 /* Footer */
 #iframMobile {
   display: none;
