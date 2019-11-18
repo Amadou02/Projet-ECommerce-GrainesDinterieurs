@@ -250,6 +250,10 @@ html, body {
   color: #6e865f;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif !important;
+  font-size: 1.15em;
+}
+.price {
+  font-size: 1.5vw;
 }
 #colonneArticle .card-footer{
   background-color: #6e865f;
@@ -303,12 +307,16 @@ html, body {
     display: block;
     width: 100% !important;
   }
+  .price {
+    font-size: 5vw;
+  }
 }
 
 #footerAncre .px-3{
   color: #6e865f;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif !important;
+
 }
 #footerAncre .logoFooterMobile {
   display : none;

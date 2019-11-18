@@ -29,7 +29,7 @@ $(function(){
       $('.' + articleRef + 'Price').html(articlePrice)
     } else {
       // Si non, ajout d'un nouvel article au panier
-      // Suppression du message du paneier vide à l'ajout du premier article
+      // Suppression du message du panier vide à l'ajout du premier article
       if ($('#messagePanierVide').css('display', 'table-row')){
         $('#panierVide').hide()
       }
@@ -44,7 +44,7 @@ $(function(){
     // Modification de la quantité avec les boutons
     $('.boutonPlus').click(function(){
       var priceRef = $(this).parent().parent().siblings('.article_ref').html()
-      // Récupérer le pric original pour éviter l'inflation
+      // Récupérer le prix original pour éviter l'inflation
       var price = ($('.' + priceRef).parent().siblings('.card-footer').children('.price').html()).slice(0, -2)
       plus = Number($('.getQuantity').html()) + 1
       $('.getQuantity').html(plus)
@@ -81,7 +81,7 @@ $(function(){
     td5 = '<td>\n<button id="deleteButtonWishlist" class="btn btn-light mx-auto"></button>\n</td>';
     // Vérification si l'article est déjà dans la wishlist
     if (!wishlist.includes(articleName)){
-      // Suppression du message du paneier vide à l'ajout du premier article
+      // Suppression du message du panier vide à l'ajout du premier article
       if ($('#messageWishlistVide').css('display', 'table-row')){
         $('#wishlistVide').hide()
       }
@@ -107,3 +107,6 @@ $(function(){
     alert('Votre total est de : ' + prixTotal + ' €')
   });
 });
+// $('.#boutonPanierCheckout').click(function() {
+//   $('.modal').modal('show')
+// })
