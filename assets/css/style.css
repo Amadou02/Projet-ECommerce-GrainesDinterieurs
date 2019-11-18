@@ -57,6 +57,7 @@ html, body {
   list-style-type: none;
   justify-content: space-around;
   max-height: 20px;
+  z-index: 1;
 }
 
 .nav-link {
@@ -102,7 +103,6 @@ html, body {
   }
 }
 /* Fin chutes de neige */
-
 .snow__layer {
   position: absolute;
   left: -100px;
@@ -307,6 +307,9 @@ html, body {
 @media only screen and (max-width: 990px) {
   .nav-link {
     background-color: #c6a571;
+  }
+  .navbar{
+    
   }
 @media only screen and (max-width: 880px) {
   #iframWide {
