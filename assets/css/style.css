@@ -214,6 +214,18 @@ html, body {
 }
 /* Fin chutes de neige */
 
+/* Panier */
+/* #deleteButton img {
+  width: 12%;
+} */
+#deleteButton {
+  display: block;
+  width: 20%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('https://image.flaticon.com/icons/svg/1214/1214428.svg');
+}
 /* Modal */
 #boutonPanier, #boutonWishlist {
   font-size: 150%;
