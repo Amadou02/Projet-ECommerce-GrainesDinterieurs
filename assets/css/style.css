@@ -57,22 +57,29 @@ html, body {
   list-style-type: none;
   justify-content: space-around;
   max-height: 20px;
+  z-index: 1;
 }
 
 .nav-link {
   color: #FFFF;
   text-shadow: black 0.2em 0.2em 0.3em;
   font-family: "Cinzel";
-  font-size: 120%;
+  font-size: 1vw;
 }
-.searchButton{
+.searchButton {
+    background-color: #323232;
+}
+.searchButton > a{
   font-family: "Oswald";
   background-color: #323232;
   color: #FFFF;
-  font-size: 200%;
+  font-size: 1.5vw;
 }
-.searchButton button:hover{
+.searchButton a:hover{
   color: #dacb8d;
+}
+.fa-bars{
+  text-shadow: black 0.2em 0.2em 0.3em;
 }
 /* Chutes de neige */
 .snow {
@@ -96,7 +103,6 @@ html, body {
   }
 }
 /* Fin chutes de neige */
-
 .snow__layer {
   position: absolute;
   left: -100px;
@@ -282,6 +288,9 @@ html, body {
   #deco{
     display:none;
   }
+  .nav-link{
+    font-size: 1.5vw;
+  }
 }
 @media screen and (min-width: 1101px){
   #deco{
@@ -295,6 +304,21 @@ html, body {
 #iframMobile {
   display: none;
 }
+@media only screen and (max-width: 990px) {
+  .nav-link {
+    background-color: #c6a571;
+    z-index: 1;
+    font-size: 3vw;
+  }
+  .navbar{
+    z-index: 1;
+  }
+  .carousel-control-next{
+    display: none;
+  }
+  .carousel-control-prev{
+    display: none;
+  }
 @media only screen and (max-width: 880px) {
   #iframWide {
     display: none;
@@ -304,7 +328,6 @@ html, body {
     width: 100% !important;
   }
 }
-
 #footerAncre .px-3{
   color: #6e865f;
   font-weight: bold;
