@@ -65,14 +65,20 @@ html, body {
   font-family: "Cinzel";
   font-size: 120%;
 }
-.searchButton{
+.searchButton {
+    background-color: #323232;
+}
+.searchButton > a{
   font-family: "Oswald";
   background-color: #323232;
   color: #FFFF;
   font-size: 200%;
 }
-.searchButton button:hover{
+.searchButton a:hover{
   color: #dacb8d;
+}
+.fa-bars{
+  text-shadow: black 0.2em 0.2em 0.3em;
 }
 /* Chutes de neige */
 .snow {
