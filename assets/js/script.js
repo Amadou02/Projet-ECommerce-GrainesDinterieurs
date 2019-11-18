@@ -106,4 +106,17 @@ $(function(){
     }
     alert('Votre total est de : ' + prixTotal + ' €')
   });
+  // partie image inspi deco
+  //appel de la fonction au clic sur l'image partie inspi deco
+  $('#deco img').on('click', function(){
+    //selectionne toutes les images
+  $(this).each(function(){
+    //création d'une variable qui récupère la source des images
+    var myDecoImage =$(this).attr('src');
+    //récupère la source de l'image cliqué dans la modal
+    $('#img01').attr('src', myDecoImage);
+    //afficher la modal
+    $('#myDecoModal').modal('show');
+  });
+});
 });
