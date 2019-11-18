@@ -215,9 +215,6 @@ html, body {
 /* Fin chutes de neige */
 
 /* Panier */
-/* #deleteButton img {
-  width: 12%;
-} */
 #deleteButton, #deleteButtonWishlist {
   display: block;
   width: 20%;
