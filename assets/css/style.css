@@ -304,6 +304,10 @@ html, body {
 #iframMobile {
   display: none;
 }
+@media only screen and (max-width: 990px) {
+  .nav-link {
+    background-color: #c6a571;
+  }
 @media only screen and (max-width: 880px) {
   #iframWide {
     display: none;
