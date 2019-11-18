@@ -23,9 +23,9 @@ $(function(){
     // Vérification si l'article est déjà dans le panier
     if (panier.includes(articleName)){
       // Si oui, incrémentation de la quantité
-      articleQuantity = Number($('#' + articleRef + 'Quantity').html()) + 1
+      articleQuantity = Number($('.getQuantity').html()) + 1
       articlePrice = (articlePrice.slice(0, -2) * articleQuantity).toFixed(2) + ' €'
-      $('#' + articleRef + 'Quantity').html(articleQuantity)
+      $('.getQuantity').html(articleQuantity)
       $('.' + articleRef + 'Price').html(articlePrice)
     } else {
       // Si non, ajout d'un nouvel article au panier
