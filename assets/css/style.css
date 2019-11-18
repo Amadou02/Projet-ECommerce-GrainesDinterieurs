@@ -63,7 +63,7 @@ html, body {
   color: #FFFF;
   text-shadow: black 0.2em 0.2em 0.3em;
   font-family: "Cinzel";
-  font-size: 120%;
+  font-size: 1vw;
 }
 .searchButton {
     background-color: #323232;
@@ -72,7 +72,7 @@ html, body {
   font-family: "Oswald";
   background-color: #323232;
   color: #FFFF;
-  font-size: 200%;
+  font-size: 1.5vw;
 }
 .searchButton a:hover{
   color: #dacb8d;
@@ -287,6 +287,9 @@ html, body {
   }
   #deco{
     display:none;
+  }
+  .nav-link{
+    font-size: 1.5vw;
   }
 }
 @media screen and (min-width: 1101px){
