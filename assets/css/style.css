@@ -324,7 +324,6 @@ html, body {
   .carousel-control-prev{
     display: none;
   }
-}
 @media only screen and (max-width: 880px) {
   #iframWide {
     display: none;
@@ -341,6 +340,7 @@ html, body {
   color: #6e865f;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif !important;
+
 }
 #footerAncre .logoFooterMobile {
   display : none;
